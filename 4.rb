@@ -16,4 +16,15 @@
 #
 ## Решение:
 
+result = 0 
+file = File.new("data/4.txt")
 
+file.each_line do |string|
+  number = string.split('x').map(&:to_i).sort!
+  length = number[0]
+  height = number[1]
+  width = number[2]
+  result += 2 * width * length + 2 * length * height + 2 * height * width + length * height
+end
+
+puts result 

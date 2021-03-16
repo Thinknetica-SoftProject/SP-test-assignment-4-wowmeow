@@ -10,4 +10,13 @@
 #
 ## Решение:
 
+sum = 0
+file = File.new("data/3.txt")
 
+file.each_line do |string|
+  number = string.split(' ').map(&:to_i)
+  difference = number.max - number.min
+  sum += difference
+end
+
+puts sum 
